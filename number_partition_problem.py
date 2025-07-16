@@ -100,7 +100,6 @@ class GreedyNPPMean:
                                                                         student
                                                      ])
 
-            print(group_2_of)
             group, student = max(group_2_of,
                                  key=lambda seq:
                                  group_2_of[seq[0], seq[1]])

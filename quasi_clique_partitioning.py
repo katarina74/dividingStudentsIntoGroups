@@ -25,6 +25,8 @@ class GreedyQCPP:
                                            range(self.number_of_groups)}
 
     def get_density(self, quasi_clique):
+        if len(quasi_clique) <= 1:
+            return 1
         components = {}
         for s in quasi_clique:
             if self.student_2_group[s] not in components:
@@ -61,7 +63,7 @@ class GreedyQCPP:
 
             group = max(self.group_2_students_pre,
                         key=lambda g:
-                        0 if self.group_2_students_pre[g]
+                        -1 if self.group_2_students_pre[g]
                             == self.group_2_students[g]
                         else self.get_density(self.group_2_students_pre[g]))
 
